@@ -250,7 +250,7 @@ $app_name = idx($app_info, 'name', '');
 
 <?php
 $max = 8;
-$num = rand(0, $max);
+$opcaocorreta = rand(0, $max);
 $opcaorand1 = rand(0, $max);
 
 while($opcaorand1 == $num){
@@ -259,13 +259,13 @@ $opcaorand1 = rand(0, $max);
 
 $opcaorand2 = rand(0, $max);
 
-while($opcaorand2 == $num || $opcaorand2 == $opcaorand1){
+while($opcaorand2 == $opcaocorreta || $opcaorand2 == $opcaorand1){
 $opcaorand2 = rand(0, $max);
 }
 
 $opcaorand3 = rand(0, $max);
 
-while($opcaorand3 == $num || $opcaorand3 == $opcaorand2 || $opcaorand3 == $opcaorand1){
+while($opcaorand3 == $opcaocorreta || $opcaorand3 == $opcaorand2 || $opcaorand3 == $opcaorand1){
 $opcaorand3 = rand(0, $max);
 }
 
@@ -320,13 +320,13 @@ $op3 = '<a href="index.php?nome=<?php echo $nomes[$opcaorand3]; ?>" target="_top
 */
 ?>
 
-<p><IMG SRC="<?php echo $img[$num]; ?>" ALT="filme"></p>
+<p><IMG SRC="<?php echo $img[$opcaocorreta]; ?>" ALT="filme"></p>
 
 <?php
     $ordem = rand(1,4);   
     switch ($ordem) {
     case 1:?>
-         <a href="index.php?nome=<?php echo $nomes[$num]; ?>" target="_top" class="button"><?php echo $nomes[$num]; ?></a><br>
+         <a href="index.php?nome=<?php echo $nomes[$opcaocorreta]; ?>" target="_top" class="button"><?php echo $nomes[$opcaocorreta]; ?></a><br>
          <a href="index.php?nome=<?php echo $nomes[$opcaorand1]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand1]; ?></a><br>
          <a href="index.php?nome=<?php echo $nomes[$opcaorand2]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand2]; ?></a><br>
          <a href="index.php?nome=<?php echo $nomes[$opcaorand3]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand3]; ?></a><br>
@@ -334,7 +334,7 @@ $op3 = '<a href="index.php?nome=<?php echo $nomes[$opcaorand3]; ?>" target="_top
          break;
    case 2:?>
          <a href="index.php?nome=<?php echo $nomes[$opcaorand1]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand1]; ?></a><br>
-         <a href="index.php?nome=<?php echo $nomes[$num]; ?>" target="_top" class="button"><?php echo $nomes[$num]; ?></a><br>
+         <a href="index.php?nome=<?php echo $nomes[$opcaocorreta]; ?>" target="_top" class="button"><?php echo $nomes[$opcaocorreta]; ?></a><br>
          <a href="index.php?nome=<?php echo $nomes[$opcaorand2]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand2]; ?></a><br>
          <a href="index.php?nome=<?php echo $nomes[$opcaorand3]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand3]; ?></a><br>
 <?php
@@ -342,7 +342,7 @@ $op3 = '<a href="index.php?nome=<?php echo $nomes[$opcaorand3]; ?>" target="_top
    case 3:?>
          <a href="index.php?nome=<?php echo $nomes[$opcaorand1]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand1]; ?></a><br>
          <a href="index.php?nome=<?php echo $nomes[$opcaorand2]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand2]; ?></a><br>
-         <a href="index.php?nome=<?php echo $nomes[$num]; ?>" target="_top" class="button"><?php echo $nomes[$num]; ?></a><br>
+         <a href="index.php?nome=<?php echo $nomes[$opcaocorreta]; ?>" target="_top" class="button"><?php echo $nomes[$opcaocorreta]; ?></a><br>
          <a href="index.php?nome=<?php echo $nomes[$opcaorand3]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand3]; ?></a><br>
 <?php
          break;
@@ -350,7 +350,7 @@ $op3 = '<a href="index.php?nome=<?php echo $nomes[$opcaorand3]; ?>" target="_top
          <a href="index.php?nome=<?php echo $nomes[$opcaorand1]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand1]; ?></a><br>
          <a href="index.php?nome=<?php echo $nomes[$opcaorand2]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand2]; ?></a><br>
          <a href="index.php?nome=<?php echo $nomes[$opcaorand3]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand3]; ?></a><br>
-         <a href="index.php?nome=<?php echo $nomes[$num]; ?>" target="_top" class="button"><?php echo $nomes[$num]; ?></a><br>
+         <a href="index.php?nome=<?php echo $nomes[$opcaocorreta]; ?>" target="_top" class="button"><?php echo $nomes[$opcaocorreta]; ?></a><br>
 <?php
          break;   
    }
