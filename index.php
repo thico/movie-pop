@@ -249,7 +249,25 @@ $app_name = idx($app_info, 'name', '');
     </header>
 
 <?php
-$num = rand(0, 8);
+$max = 8;
+$num = rand(0, $max);
+$opcaorand1 = rand(0, $max);
+
+while($opcaorand1 == $num){
+$opcaorand1 = rand(0, $max);
+}
+
+$opcaorand2 = rand(0, $max);
+
+while($opcaorand2 == $num || $opcaorand2 == $opcaorand1){
+$opcaorand2 = rand(0, $max);
+}
+
+$opcaorand3 = rand(0, $max);
+
+while($opcaorand3 == $num || $opcaorand3 == $opcaorand2 || $opcaorand3 == $opcaorand1){
+$opcaorand3 = rand(0, $max);
+}
 
 $links = array
 (
@@ -293,17 +311,59 @@ $img = array
 
 //echo $links[$num] ."=". $nomes[$num] ."=". $img[$num];
 
+$qualfilme = '<a href="https://rocky-savannah-3684.herokuapp.com" target="_top" class="button">Que filme é esse?</a>';
+echo $qualfilme
+/*$opcorreta = '<a href="index.php?nome='. echo $nomes[$num] .'" target="_top" class="button">' . echo $nomes[$num] .'</a><br>';
+$op1 = '<a href="index.php?nome=<?php echo $nomes[$opcaorand1]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand1]; ?></a><br>';
+$op2 = '<a href="index.php?nome=<?php echo $nomes[$opcaorand2]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand2]; ?></a><br>';
+$op3 = '<a href="index.php?nome=<?php echo $nomes[$opcaorand3]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand3]; ?></a><br>';
+*/
 ?>
 
 <p><IMG SRC="<?php echo $img[$num]; ?>" ALT="filme"></p>
+
+<?php
+    $ordem = rand(1,4);   
+    switch ($ordem) {
+    case 1:?>
+         <a href="index.php?nome=<?php echo $nomes[$num]; ?>" target="_top" class="button"><?php echo $nomes[$num]; ?></a><br>
+         <a href="index.php?nome=<?php echo $nomes[$opcaorand1]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand1]; ?></a><br>
+         <a href="index.php?nome=<?php echo $nomes[$opcaorand2]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand2]; ?></a><br>
+         <a href="index.php?nome=<?php echo $nomes[$opcaorand3]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand3]; ?></a><br>
+<?php
+         break;
+   case 2:?>
+         <a href="index.php?nome=<?php echo $nomes[$opcaorand1]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand1]; ?></a><br>
+         <a href="index.php?nome=<?php echo $nomes[$num]; ?>" target="_top" class="button"><?php echo $nomes[$num]; ?></a><br>
+         <a href="index.php?nome=<?php echo $nomes[$opcaorand2]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand2]; ?></a><br>
+         <a href="index.php?nome=<?php echo $nomes[$opcaorand3]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand3]; ?></a><br>
+<?php
+         break;
+   case 3:?>
+         <a href="index.php?nome=<?php echo $nomes[$opcaorand1]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand1]; ?></a><br>
+         <a href="index.php?nome=<?php echo $nomes[$opcaorand2]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand2]; ?></a><br>
+         <a href="index.php?nome=<?php echo $nomes[$num]; ?>" target="_top" class="button"><?php echo $nomes[$num]; ?></a><br>
+         <a href="index.php?nome=<?php echo $nomes[$opcaorand3]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand3]; ?></a><br>
+<?php
+         break;
+   case 4:?>
+         <a href="index.php?nome=<?php echo $nomes[$opcaorand1]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand1]; ?></a><br>
+         <a href="index.php?nome=<?php echo $nomes[$opcaorand2]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand2]; ?></a><br>
+         <a href="index.php?nome=<?php echo $nomes[$opcaorand3]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand3]; ?></a><br>
+         <a href="index.php?nome=<?php echo $nomes[$num]; ?>" target="_top" class="button"><?php echo $nomes[$num]; ?></a><br>
+<?php
+         break;   
+   }
+   
+   ?>
     
-    <section id="get-started">
-      <a href="https://rocky-savannah-3684.herokuapp.com" target="_top" class="button">Que filme é esse?</a>
+    <!--<section id="get-started">
+      
       <a href="index.php?nome=<?php echo $nomes[$num]; ?>" target="_top" class="button"><?php echo $nomes[$num]; ?></a><br>
-      <a href="index.php?nome=<?php $n = rand(0, 8); echo $nomes[$n]; ?>" target="_top" class="button"><?php echo $nomes[$n]; ?></a><br>
-      <a href="index.php?nome=<?php $n = rand(0, 8); echo $nomes[$n]; ?>" target="_top" class="button"><?php echo $nomes[$n]; ?></a><br>
-      <a href="index.php?nome=<?php $n = rand(0, 8); echo $nomes[$n]; ?>" target="_top" class="button"><?php echo $nomes[$n]; ?></a><br>
-    </section>
+      <a href="index.php?nome=<?php echo $nomes[$opcaorand1]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand1]; ?></a><br>
+      <a href="index.php?nome=<?php echo $nomes[$opcaorand2]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand2]; ?></a><br>
+      <a href="index.php?nome=<?php echo $nomes[$opcaorand3]; ?>" target="_top" class="button"><?php echo $nomes[$opcaorand3]; ?></a><br>
+    </section>-->
     
     
 
